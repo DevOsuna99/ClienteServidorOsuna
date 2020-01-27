@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'nt$f17v=3=)z*dp*%#*j+3t03=cv5b89-+ofa!ysy3%ycjerf^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = false
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '3.84.72.28']
 
 
 # Application definition
@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'CS.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'osunadb',
+        'USER': 'postgres',
+        'PASSWORD': 'cesarraser',
+        'HOST': 'osunadb.cc60r1itvxao.us-east-1.rds.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
